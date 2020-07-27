@@ -4,6 +4,20 @@
 <head>
     <title>Pi Music</title>
     <script type="text/javascript" src="static/assets/js/jquery.slim.min.js"></script>
+    <script type="text/javascript">
+        $('#device-item a').on('click', function (event) {
+            event.preventDefault();
+
+            $.ajax({
+                url: this.href,
+                type: POST,
+                data: '{test:aja}',
+                success: function (result) {
+                    alert("Device connected")
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -25,7 +39,7 @@
             {% for item in devices %}
             <td>{{ item["name"] }}</td>
             <td>{{ item["addr"] }}</td>
-            <td><a href="/api/bluetooth/connect/{{ item['addr'] }}">Connect Device</a></td>
+            <td id="device-item"><a href="/api/bluetooth/connect/{{ item['addr'] }}">Connect Device</a></td>
             {% endfor %}
             {% endif %}
         </tr>
