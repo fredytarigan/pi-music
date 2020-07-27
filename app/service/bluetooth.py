@@ -1,6 +1,7 @@
 import bluetooth
 import os
 import subprocess
+import pydbus
 
 
 class Bluetooth():
@@ -67,5 +68,14 @@ class Bluetooth():
         return device_addr
 
     def connect(self, addr):
-        sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        sock.bind((addr, 3))
+        device_addr = addr
+        adapter_path = '/org/bluez/hci0'
+        device_path = f'{adapter_path}/dev_{device_addr.replace(":","_")}'
+
+        bluez_service = 'org.bluez'
+        bus = pydbus.SystemBus()
+        adapter = bus.get(bluez_service, adapter_path)
+
+        device = bus.get(bluez_service, device_path)
+
+        device.Connect()
