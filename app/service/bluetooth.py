@@ -54,7 +54,7 @@ class Bluetooth():
 
         device_addr = []
 
-        devices = bluetooth.discover_devices(lookup_name=True)
+        devices = bluetooth.discover_devices(lookup_names=True)
         print("Found {} devices".format(len(devices)))
 
         for addr, name in devices:
