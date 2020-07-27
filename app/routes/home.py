@@ -1,14 +1,23 @@
-from flask import Blueprint, Response
+from flask import Blueprint, Response, render_template
 from flask import json
 
 # local import
 from app.service.bluetooth import Bluetooth
 
-home = Blueprint("home", __name__)
+home_bp = Blueprint(
+    "home",
+    __name__,
+    template_folder="templates",
+    url_prefix="/"
+)
 
 
-@home.route("/")
+@home_bp.route("/")
 def index():
     bluetooth = Bluetooth()
-    bluetooth.enable_bluetooth()
-    return "Ok", 200
+    devices = bluetooth.search_devices()
+
+    return render_template(
+        'home.html',
+        devices=devices
+    )

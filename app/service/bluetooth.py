@@ -52,8 +52,17 @@ class Bluetooth():
         if not self.bluetooth_on:
             self.enable_bluetooth()
 
+        device_addr = []
+
         devices = bluetooth.discover_devices(lookup_name=True)
         print("Found {} devices".format(len(devices)))
 
         for addr, name in devices:
             print("{} - {}".format(addr, name))
+            device_addr.append(addr)
+
+        return device_addr
+
+    def connect(self, addr):
+        sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        sock.bind((addr, 3))
