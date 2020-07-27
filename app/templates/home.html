@@ -16,8 +16,15 @@
                 Mac Address
             </th>
             <th>
-                <a href="/connect">Connect</a>
+                <a href="/connect">Action</a>
             </th>
+        </tr>
+        <tr>
+            {% if len(devices) > 0 %}
+            {% for item in devices %}
+            <td></td>
+            {% endfor %}
+            {% endif %}
         </tr>
     </table>
 </body>
