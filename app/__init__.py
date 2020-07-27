@@ -4,6 +4,7 @@ from flask import Flask
 
 # local import
 from app.routes.home import home_bp
+from app.routes.api import api_bp
 
 
 def create_app():
