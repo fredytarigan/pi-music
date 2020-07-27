@@ -17,6 +17,8 @@ def index():
     bluetooth = Bluetooth()
     devices = bluetooth.search_devices()
 
+    print(devices)
+
     return render_template(
         'home.html',
         devices=devices
