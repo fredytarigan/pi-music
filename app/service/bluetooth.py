@@ -261,4 +261,9 @@ class Bluetooth():
         device_addr = addr
 
         bl = Bluetoothctl()
-        bl.connect(device_addr)
+        try:
+            bl.connect(device_addr)
+            return "OK"
+        except BluetoothctlError as e:
+            print(e)
+            return None
