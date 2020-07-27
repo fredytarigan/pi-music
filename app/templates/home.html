@@ -5,16 +5,18 @@
     <title>Pi Music</title>
     <script type="text/javascript" src="static/assets/js/jquery.slim.min.js"></script>
     <script type="text/javascript">
-        $('#device-item').click(function () {
-            alert("The button was clicked." + this.name);
-            // $.ajax({
-            //     url: "/api/bluetooth/connect",
-            //     type: POST,
-            //     data: this.name,
-            //     success: function (result) {
-            //         alert("Device connected")
-            //     }
-            // });
+        $(document).ready(function () {
+            $('#device-item').click(function () {
+                alert("The button was clicked." + this.name);
+                // $.ajax({
+                //     url: "/api/bluetooth/connect",
+                //     type: POST,
+                //     data: this.name,
+                //     success: function (result) {
+                //         alert("Device connected")
+                //     }
+                // });
+            });
         });
     </script>
 </head>
