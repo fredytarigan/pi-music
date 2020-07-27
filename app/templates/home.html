@@ -23,8 +23,8 @@
         <tr>
             {% if devices|length > 0 %}
             {% for item in devices %}
-            <td>{% item["name"] %}</td>
-            <td>{% item["addr"] %}</td>
+            <td>{{ item["name"] }}</td>
+            <td>{{ item["addr"] }}</td>
             {% endfor %}
             {% endif %}
         </tr>
