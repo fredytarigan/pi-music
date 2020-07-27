@@ -9,7 +9,7 @@
             $('#device-item').click(function () {
                 $.ajax({
                     url: "/api/bluetooth/connect",
-                    type: POST,
+                    type: "POST",
                     data: {
                         "device_addr": this.name
                     },
