@@ -15,4 +15,5 @@ api_bp = Blueprint(
 @api_bp.route("/bluetooth/connect", methods=["POST"])
 def api_bluetooth_connect():
     data = request.get_json()
-    return data
+    print(data)
+    return "OK", 200
