@@ -49,8 +49,8 @@ class Bluetooth():
         self.bluetooth_on = False
 
     def search_devices(self):
-        if not self.bluetooth_on:
-            self.enable_bluetooth()
+        # if not self.bluetooth_on:
+        #     self.enable_bluetooth()
 
         device_addr = []
 
