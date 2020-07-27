@@ -11,9 +11,9 @@
                 $.ajax({
                     url: "/api/bluetooth/connect",
                     type: "POST",
-                    data: {
+                    data: JSON.stringify({
                         "device_addr": this.name
-                    },
+                    }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
