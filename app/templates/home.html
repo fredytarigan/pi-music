@@ -5,9 +5,7 @@
     <title>Pi Music</title>
     <script type="text/javascript" src="static/assets/js/jquery.slim.min.js"></script>
     <script type="text/javascript">
-        $('#device-item').click(function (event) {
-            event.preventDefault();
-
+        $('#device-item').click(function () {
             $.ajax({
                 url: "/api/bluetooth/connect",
                 type: POST,
