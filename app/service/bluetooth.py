@@ -58,7 +58,11 @@ class Bluetooth():
         print("Found {} devices".format(len(devices)))
 
         for addr, name in devices:
-            device_addr.append(addr)
+            device = {
+                "name": name,
+                "addr": addr
+            }
+            device_addr.append(device)
 
         return device_addr
 
