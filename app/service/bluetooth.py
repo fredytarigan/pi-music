@@ -1,8 +1,3 @@
-import bluetooth
-import os
-import subprocess
-import pydbus
-
 # ReachView code is placed under the GPL license.
 # Written by Egor Fedorov (egor.fedorov@emlid.com)
 # Copyright (c) 2015, Emlid Limited
@@ -30,6 +25,8 @@ import time
 import pexpect
 import subprocess
 import sys
+import bluetooth
+import os
 
 
 class BluetoothctlError(Exception):
