@@ -12,7 +12,7 @@ class Bluetooth():
         process = subprocess.Popen(
             ['/bin/systemctl', 'start', 'bluetooth'],
             stdout=subprocess.PIPE,
-            universal_newline=True
+            universal_newlines=True
         )
 
         while True:
@@ -32,7 +32,7 @@ class Bluetooth():
         process = subprocess.Popen(
             ['/bin/systemctl', 'stop', 'bluetooth'],
             stdout=subprocess.PIPE,
-            universal_newline=True
+            universal_newlines=True
         )
 
         while True:
