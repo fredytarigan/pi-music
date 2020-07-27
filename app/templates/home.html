@@ -7,15 +7,16 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#device-item').click(function () {
-                alert("The button was clicked." + this.name);
-                // $.ajax({
-                //     url: "/api/bluetooth/connect",
-                //     type: POST,
-                //     data: this.name,
-                //     success: function (result) {
-                //         alert("Device connected")
-                //     }
-                // });
+                $.ajax({
+                    url: "/api/bluetooth/connect",
+                    type: POST,
+                    data: {
+                        "device_addr": this.name
+                    },
+                    success: function (result) {
+                        alert("Device connected")
+                    }
+                });
             });
         });
     </script>
